@@ -10,7 +10,7 @@ const ProductPage = () => {
   const router = useRouter();
   const query = router.query;
   const product = useProduct(query.id);
-  console.log("hello", product);
+  console.log("hi", product);
   return (
     <div className={style.container}>
       <Paper

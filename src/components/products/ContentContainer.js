@@ -7,6 +7,13 @@ const HeadingWrappper = styled(Typography)`
   font-weight: 600;
 `;
 
+const ContentWrapper = styled(Box)`
+  background-color: hsl(223, 64%, 98%);
+  padding: 6px;
+  width: max-content;
+  border-radius: 4px;
+`;
+
 const ContentContainer = ({
   name,
   price,
@@ -24,16 +31,22 @@ const ContentContainer = ({
       <Typography fontSize={"0.9rem"} color={"text.secondary"}>
         {description}
       </Typography>
-      <Typography variant="h5" fontWeight={600}>
-        ${price}
-      </Typography>
-      <Typography variant="body1" color={"text.secondary"}>
-        Brand: {brand}
-      </Typography>
-      {countInStock !== 0 ? (
-        <Typography variant="body2">Qunatity: {countInStock}</Typography>
+      <ContentWrapper>
+        <Typography variant="h5" color={"orange"} fontWeight={600}>
+          ${price}
+        </Typography>
+      </ContentWrapper>
+      <ContentWrapper>
+        <Typography variant="body1" color={"text.secondary"}>
+          Brand: {brand}
+        </Typography>
+      </ContentWrapper>
+      {countInStock == 0 ? (
+        <Typography variant="body2" color={"text.secondary"}>
+          Does not Exist 😭
+        </Typography>
       ) : (
-        <Typography color={"text.secondary"}>Does not Exist!</Typography>
+        <Typography variant="body2">Qunatity: {countInStock}</Typography>
       )}
     </Stack>
   );

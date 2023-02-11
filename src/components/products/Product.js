@@ -26,7 +26,9 @@ const Product = ({ product }) => {
         </BoxContent>
         <BoxContent>
           <Typography variant="body1" component={"span"}>
-            Quantity: {countInStock == 0 ? "Does not Exist" : countInStock}
+            {countInStock == 0
+              ? "Does not Exist 😒"
+              : `Quantity: ${countInStock}`}
           </Typography>
         </BoxContent>
         <Box

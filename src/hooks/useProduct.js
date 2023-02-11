@@ -10,8 +10,7 @@ const useProduct = (id) => {
       );
       setProduct(data);
     } catch (error) {
-      //console.log(error.response.data);
-      console.log(error);
+      console.log(error.response.data);
     }
   };
 
