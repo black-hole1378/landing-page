@@ -21,6 +21,7 @@ const ContentContainer = ({
   category,
   brand,
   countInStock,
+  numReviews,
 }) => {
   return (
     <Stack spacing={2} p={2}>
@@ -48,6 +49,9 @@ const ContentContainer = ({
       ) : (
         <Typography variant="body2">Qunatity: {countInStock}</Typography>
       )}
+      <ContentWrapper>
+        <Typography variant="body1">Number of Reviews: {numReviews}</Typography>
+      </ContentWrapper>
     </Stack>
   );
 };
