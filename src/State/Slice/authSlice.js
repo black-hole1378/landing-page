@@ -31,7 +31,7 @@ export const authSlice = createSlice({
   },
 });
 
-export const { setAuthState, setAuthUser } = authSlice.actions;
+export const { setAuthState, setAuthUser, setToken } = authSlice.actions;
 export const selectAuthState = (state) => state.auth.authState;
 export const selectAuthUser = (state) => state.auth.authUser;
 export const selectToken = (state) => state.auth.token;

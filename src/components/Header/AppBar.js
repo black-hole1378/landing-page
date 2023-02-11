@@ -8,7 +8,7 @@ import ShoppingCart from "./ShoppingCart";
 const HeaderContainer = () => {
   return (
     <AppBar
-      position="static"
+      position="sticky"
       sx={{
         backgroundColor: "hsl(0, 0%, 100%)",
         color: "inherit",
