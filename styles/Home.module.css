@@ -12,10 +12,18 @@
 
 .footer {
   display: flex;
+  height: max-content;
+  width: 100%;
+  margin-top: auto;
 }
 
+.link,
 .cartLogo {
   text-decoration: none;
   outline: none;
+  color: rgb(100, 97, 97);
+}
+
+.cartLogo {
   color: inherit;
 }
