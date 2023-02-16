@@ -2,7 +2,7 @@ import React from "react";
 import { Stack, Card, styled, Box, Typography } from "@mui/material";
 
 const ProductImage = styled("img")`
-  width: 100%;
+  width: 200px;
   height: 100px;
 `;
 
@@ -16,16 +16,29 @@ const Product = ({ product }) => {
   const { image, name, rating, price, countInStock } = product;
   console.log(image);
   return (
-    <Card variant="outlined" sx={{ boxShadow: 1, padding: 5 }}>
+    <Card
+      variant="outlined"
+      sx={{ boxShadow: 1, padding: 5, height: 300, maxHeight: 400 }}
+    >
       <Stack spacing={1}>
-        <ProductImage src={image} alt="not Supported" />
+        <Box display="flex" justifyContent="center">
+          <ProductImage src={image} alt="not Supported" />
+        </Box>
         <BoxContent>
-          <Typography variant="body1" component={"span"}>
+          <Typography
+            fontSize={{ xs: "0.8rem", sm: "0.9rem", md: "1rem" }}
+            variant="body1"
+            component={"span"}
+          >
             {name}
           </Typography>
         </BoxContent>
         <BoxContent>
-          <Typography variant="body1" component={"span"}>
+          <Typography
+            fontSize={{ xs: "0.8rem", sm: "0.9rem", md: "1rem" }}
+            variant="body1"
+            component={"span"}
+          >
             {countInStock == 0
               ? "Does not Exist 😒"
               : `Quantity: ${countInStock}`}
@@ -36,10 +49,18 @@ const Product = ({ product }) => {
           alignItems="center"
           justifyContent="space-between"
         >
-          <Typography variant="body1" component="span">
+          <Typography
+            fontSize={{ xs: "0.6rem", sm: "0.9rem", md: "1rem" }}
+            variant="body1"
+            component="span"
+          >
             Price: {price}$
           </Typography>
-          <Typography variant="body1" component="span">
+          <Typography
+            fontSize={{ xs: "0.6rem", sm: "0.9rem", md: "1rem" }}
+            variant="body1"
+            component="span"
+          >
             Rating: {rating}
           </Typography>
         </Box>
