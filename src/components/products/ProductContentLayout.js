@@ -10,10 +10,7 @@ const ContentContainerWrapper = styled(Box)`
 const ProductLayout = ({ children }) => {
   return (
     <ContentContainerWrapper>
-      <Stack spacing={3}>
-        {children}
-        <ProductContainer />
-      </Stack>
+      <Stack spacing={3}>{children}</Stack>
     </ContentContainerWrapper>
   );
 };
