@@ -1,5 +1,6 @@
 import React from "react";
 import { RemoveIcon, AddIcon, ShoppingCartIcon } from "./index";
+import useQuantity from "../../hooks/useQuantity";
 import {
   Grid,
   IconButton,
@@ -8,7 +9,6 @@ import {
   Button,
   Box,
 } from "@mui/material";
-import { useState } from "react";
 
 const ContainerWrapper = styled(Box)`
   border-radius: 5px;
@@ -18,8 +18,8 @@ const ContainerWrapper = styled(Box)`
   justify-content: space-between;
 `;
 
-export const ProductContainer = () => {
-  const [quantity, setQuantity] = useState(0);
+export const ProductContainer = ({ countInStock }) => {
+  const { quantity, Increment, Decrement } = useQuantity(countInStock);
 
   return (
     <Grid
@@ -32,17 +32,26 @@ export const ProductContainer = () => {
     >
       <Grid item md={5} xs={12}>
         <ContainerWrapper>
-          <IconButton color="warning">
+          <IconButton
+            disabled={quantity == 0}
+            color="warning"
+            onClick={Decrement}
+          >
             <RemoveIcon fontSize="medium" />
           </IconButton>
           <Typography color="text.primary">{quantity}</Typography>
-          <IconButton color="warning">
+          <IconButton
+            disabled={quantity == countInStock}
+            color="warning"
+            onClick={() => Increment()}
+          >
             <AddIcon fontSize="medium" />
           </IconButton>
         </ContainerWrapper>
       </Grid>
       <Grid item md={7} xs={12}>
         <Button
+          disabled={countInStock == 0}
           sx={{ width: "100%", fontWeight: "300" }}
           color="warning"
           variant="contained"
