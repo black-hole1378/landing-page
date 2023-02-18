@@ -30,7 +30,7 @@ export const ProductContainer = () => {
       pr={{ xs: 4 }}
       columnSpacing={{ md: 2 }}
     >
-      <Grid item md={4} xs={12}>
+      <Grid item md={5} xs={12}>
         <ContainerWrapper>
           <IconButton color="warning">
             <RemoveIcon fontSize="medium" />
@@ -41,7 +41,7 @@ export const ProductContainer = () => {
           </IconButton>
         </ContainerWrapper>
       </Grid>
-      <Grid item md={8} xs={12}>
+      <Grid item md={7} xs={12}>
         <Button
           sx={{ width: "100%", fontWeight: "300" }}
           color="warning"
