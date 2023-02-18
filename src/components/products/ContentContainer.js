@@ -9,9 +9,11 @@ const HeadingWrappper = styled(Typography)`
 
 const ContentWrapper = styled(Box)`
   background-color: hsl(223, 64%, 98%);
-  padding: 6px;
+  padding: 4px;
   width: max-content;
   border-radius: 4px;
+  display: flex;
+  justify-content: start;
 `;
 
 const ContentContainer = ({
@@ -55,6 +57,18 @@ const ContentContainer = ({
           ${price}
         </Typography>
       </ContentWrapper>
+      {countInStock == 0 ? (
+        <Typography variant="body2" color={"text.secondary"}>
+          Does not Exist 😭
+        </Typography>
+      ) : (
+        <Typography
+          fontSize={{ xs: "0.7rem", sm: "1rem", md: "1rem" }}
+          variant="body2"
+        >
+          Qunatity: {countInStock}
+        </Typography>
+      )}
       <ContentWrapper>
         <Typography
           fontSize={{ xs: "0.8rem", sm: "1rem", md: "1.1rem" }}
