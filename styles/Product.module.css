@@ -24,3 +24,17 @@
     height: 250px;
   }
 }
+
+@media screen and (max-width: 850px) {
+  .container {
+    max-width: 100%;
+    margin: 1rem auto;
+    height: max-content;
+    padding: 20px;
+  }
+
+  .image {
+    width: 300px;
+    height: 280px;
+  }
+}
