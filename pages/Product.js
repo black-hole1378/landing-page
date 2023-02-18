@@ -3,10 +3,12 @@ import { useRouter } from "next/router";
 import useProduct from "../src/hooks/useProduct";
 import style from "../styles/Product.module.css";
 import { Paper, Grid } from "@mui/material";
-import ImageContainer from "../src/components/products/ImageContainer";
-import ContentContainer from "../src/components/products/ContentContainer";
-import ProductLayout from "../src/components/products/ProductContentLayout";
-import { ProductContainer } from "../src/components/products/ProductContainer";
+import {
+  ProductLayout,
+  ImageContainer,
+  PurchaseLayout,
+  ContentContainer,
+} from "../src/components/products/index";
 const ProductPage = () => {
   const router = useRouter();
   const query = router.query;
@@ -27,7 +29,7 @@ const ProductPage = () => {
           <Grid item md={6} xs={12}>
             <ProductLayout>
               <ContentContainer {...product} />
-              <ProductContainer {...product} />
+              <PurchaseLayout {...product} />
             </ProductLayout>
           </Grid>
         </Grid>
