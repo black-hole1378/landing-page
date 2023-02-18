@@ -16,8 +16,13 @@ export const ProductContainer = () => {
   const [quantity, setQuantity] = useState(0);
 
   return (
-    <Grid container sx={{ alignItems: "center" }} columnSpacing={2}>
-      <ContainerWrapper item md={4} sm={12} container>
+    <Grid
+      container
+      sx={{ alignItems: "center" }}
+      m={{ sx: "10px" }}
+      columnSpacing={2}
+    >
+      <ContainerWrapper item xs={12} md={4} sm={12} container>
         <Grid item>
           <IconButton
             onClick={() => setQuantity(quantity >= 1 ? quantity - 1 : quantity)}

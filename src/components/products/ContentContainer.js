@@ -25,20 +25,42 @@ const ContentContainer = ({
 }) => {
   return (
     <Stack spacing={2} p={2}>
-      <HeadingWrappper variant="subtitle2">{category}</HeadingWrappper>
-      <Typography variant="h6" fontWeight={600} color={"text.primary"}>
+      <HeadingWrappper
+        fontSize={{ xs: "0.7rem", sm: "0.9rem", md: "1rem" }}
+        variant="subtitle2"
+      >
+        {category}
+      </HeadingWrappper>
+      <Typography
+        fontSize={{ xs: "0.8rem", sm: "0.9rem", md: "1rem" }}
+        variant="h6"
+        fontWeight={600}
+        color={"text.primary"}
+      >
         {name}
       </Typography>
-      <Typography fontSize={"0.9rem"} color={"text.secondary"}>
+      <Typography
+        fontSize={{ xs: "0.7rem", sm: "0.8rem", md: "0.9rem" }}
+        color={"text.secondary"}
+      >
         {description}
       </Typography>
       <ContentWrapper>
-        <Typography variant="h5" color={"orange"} fontWeight={600}>
+        <Typography
+          fontSize={{ xs: "0.8rem", sm: "1rem", md: "1.1rem" }}
+          variant="h5"
+          color={"orange"}
+          fontWeight={600}
+        >
           ${price}
         </Typography>
       </ContentWrapper>
       <ContentWrapper>
-        <Typography variant="body1" color={"text.secondary"}>
+        <Typography
+          fontSize={{ xs: "0.8rem", sm: "1rem", md: "1.1rem" }}
+          variant="body1"
+          color={"text.secondary"}
+        >
           Brand: {brand}
         </Typography>
       </ContentWrapper>
@@ -47,10 +69,20 @@ const ContentContainer = ({
           Does not Exist 😭
         </Typography>
       ) : (
-        <Typography variant="body2">Qunatity: {countInStock}</Typography>
+        <Typography
+          fontSize={{ xs: "0.7rem", sm: "1rem", md: "1rem" }}
+          variant="body2"
+        >
+          Qunatity: {countInStock}
+        </Typography>
       )}
       <ContentWrapper>
-        <Typography variant="body1">Number of Reviews: {numReviews}</Typography>
+        <Typography
+          fontSize={{ xs: "0.8rem", sm: "1rem", md: "1rem" }}
+          variant="body1"
+        >
+          Number of Reviews: {numReviews}
+        </Typography>
       </ContentWrapper>
     </Stack>
   );
