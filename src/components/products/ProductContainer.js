@@ -18,7 +18,7 @@ const ContainerWrapper = styled(Box)`
   justify-content: space-between;
 `;
 
-export const ProductContainer = ({ countInStock }) => {
+export const ProductContainer = ({ countInStock, saveToCard, id }) => {
   const { quantity, Increment, Decrement } = useQuantity(countInStock);
 
   return (
@@ -55,6 +55,7 @@ export const ProductContainer = ({ countInStock }) => {
           sx={{ width: "100%", fontWeight: "300" }}
           color="warning"
           variant="contained"
+          onClick={() => saveToCard(quantity, id)}
         >
           <ShoppingCartIcon fontSize="medium" /> &nbsp; Add To Cart
         </Button>
