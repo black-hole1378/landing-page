@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import useProduct from "../src/hooks/useProduct";
 import style from "../styles/Product.module.css";
-import { Paper, Grid } from "@mui/material";
+import { Paper, Grid, Box } from "@mui/material";
 import {
   ProductLayout,
   ImageContainer,

@@ -8,7 +8,7 @@
 
 .image {
   width: 380px;
-  height: 480px;
+  height: 320px;
 }
 
 @media screen and (max-width: 600px) {

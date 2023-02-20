@@ -4,6 +4,7 @@ import Product from "../src/components/products/Product";
 import { Container, Grid } from "@mui/material";
 import Link from "next/link";
 import ErrorBoundary from "./ErrorBoundary";
+import Filter from "../src/components/filter/Filter";
 
 const style = {
   textDecoration: "none",
@@ -11,10 +12,10 @@ const style = {
 };
 
 export default function Index() {
-  const products = useProduct();
-  console.log(products);
+  const { products, setProducts } = useProduct();
   return (
-    <Container maxWidth="xl" sx={{ mt: 4, mb: 2 }}>
+    <Container maxWidth="xl" sx={{ mt: 1, mb: 2 }}>
+      <Filter products={products} setProducts={setProducts} />
       <Grid
         container
         rowSpacing={{ xs: 1, md: 2, sm: 1.5 }}
