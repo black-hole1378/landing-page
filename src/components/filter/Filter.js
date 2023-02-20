@@ -1,13 +1,13 @@
 import React from "react";
 import { FormControl, InputLabel, Select, MenuItem, Box } from "@mui/material";
-
+import { SortBy } from "./FilterBy";
 export default function SelectSmall({ products, setProducts }) {
   const [value, setValue] = React.useState("");
-
+  const sort = SortBy(products, setProducts);
   const handleChange = (event) => {
     setValue(event.target.value);
+    sort(event.target.value);
     console.log(products);
-    setProducts(products.sort());
   };
 
   return (
@@ -25,9 +25,9 @@ export default function SelectSmall({ products, setProducts }) {
             <MenuItem value="">
               <em>None</em>
             </MenuItem>
-            <MenuItem value={10}>Price</MenuItem>
-            <MenuItem value={20}>Category</MenuItem>
-            <MenuItem value={30}>Rating</MenuItem>
+            <MenuItem value={0}>Price</MenuItem>
+            <MenuItem value={1}>Category</MenuItem>
+            <MenuItem value={2}>Rating</MenuItem>
           </Select>
         </FormControl>
       </Box>

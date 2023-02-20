@@ -59,7 +59,7 @@ const ContentContainer = ({
       </ContentWrapper>
       {countInStock == 0 ? (
         <Typography variant="body2" color={"text.secondary"}>
-          Does not Exist 😭
+          Does not Exist
         </Typography>
       ) : (
         <Typography
@@ -80,7 +80,7 @@ const ContentContainer = ({
       </ContentWrapper>
       {countInStock == 0 ? (
         <Typography variant="body2" color={"text.secondary"}>
-          Does not Exist 😭
+          Does not Exist
         </Typography>
       ) : (
         <Typography
