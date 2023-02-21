@@ -1,10 +1,11 @@
-import { Box } from "@mui/material";
+import { Box, Snackbar, Alert } from "@mui/material";
 import React from "react";
 import { ProductContainer } from "./ProductContainer";
 import usePurchase from "../../hooks/usePurchase";
 import Purchasesd from "./Purchased";
 const PurchaseLayout = ({ countInStock, id }) => {
-  const { added, deleteFromCard, saveToCard } = usePurchase();
+  const [open, setOpen] = React.useState(false);
+  const { added, deleteFromCard, saveToCard } = usePurchase(setOpen);
 
   return (
     <>
@@ -18,6 +19,19 @@ const PurchaseLayout = ({ countInStock, id }) => {
       <Box display={added ? "flex" : "none"}>
         <Purchasesd deleteFromCard={deleteFromCard} />
       </Box>
+      <Snackbar
+        open={open}
+        autoHideDuration={6000}
+        onClose={() => setOpen(false)}
+      >
+        <Alert
+          onClose={() => setOpen(false)}
+          severity="success"
+          sx={{ width: "100%" }}
+        >
+          Successfully added to your cart
+        </Alert>
+      </Snackbar>
     </>
   );
 };

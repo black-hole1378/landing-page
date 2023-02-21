@@ -4,6 +4,7 @@ import Link from "next/link";
 import Style from "../../../styles/Home.module.css";
 import { Box } from "@mui/material";
 import ShoppingCart from "./ShoppingCart";
+import Login from "./Login";
 
 const HeaderContainer = () => {
   return (
@@ -21,7 +22,10 @@ const HeaderContainer = () => {
             Snap
           </Link>
           <Box flexGrow={1} />
-          <ShoppingCart />
+          <Box display={"flex"} alignItems="center" gap={3}>
+            <ShoppingCart />
+            <Login />
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
