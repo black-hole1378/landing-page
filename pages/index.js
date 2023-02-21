@@ -3,9 +3,7 @@ import useProduct from "../src/hooks/useProducts";
 import Product from "../src/components/products/Product";
 import { Container, Grid } from "@mui/material";
 import Link from "next/link";
-import ErrorBoundary from "./ErrorBoundary";
 import Filter from "../src/components/filter/Filter";
-
 const style = {
   textDecoration: "none",
   outline: "none",
@@ -23,14 +21,12 @@ export default function Index() {
       >
         {products.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <ErrorBoundary>
-              <Link
-                href={{ pathname: "/Product", query: { id: product._id } }}
-                style={style}
-              >
-                <Product product={product} />
-              </Link>
-            </ErrorBoundary>
+            <Link
+              href={{ pathname: "/Product", query: { id: product._id } }}
+              style={style}
+            >
+              <Product product={product} />
+            </Link>
           </Grid>
         ))}
       </Grid>
