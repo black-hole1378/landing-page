@@ -18,7 +18,7 @@ const ContainerWrapper = styled(Box)`
   justify-content: space-between;
 `;
 
-export const ProductContainer = ({ countInStock, saveToCard, id }) => {
+export const ProductContainer = ({ countInStock, saveToCard, id, setOpen }) => {
   const { quantity, Increment, Decrement } = useQuantity(countInStock);
 
   return (

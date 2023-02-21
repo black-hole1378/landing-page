@@ -1,10 +1,13 @@
 import { useState } from "react";
 
-const usePurchase = () => {
+const usePurchase = (setOpen) => {
   const [added, setAdded] = useState(false);
 
   const saveToCard = (quantity, id) => {
-    if (quantity > 0) setAdded(true);
+    if (quantity > 0) {
+      setAdded(true);
+      setOpen(true);
+    }
   };
 
   const deleteFromCard = (id) => {
