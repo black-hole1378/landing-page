@@ -4,6 +4,7 @@ import Product from "../src/components/products/Product";
 import { Container, Grid } from "@mui/material";
 import Link from "next/link";
 import Filter from "../src/components/filter/Filter";
+import Skelton from "../src/components/Skelton";
 const style = {
   textDecoration: "none",
   outline: "none",
@@ -21,12 +22,16 @@ export default function Index() {
       >
         {products.map((product, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <Link
-              href={{ pathname: "/Product", query: { id: product._id } }}
-              style={style}
-            >
-              <Product product={product} />
-            </Link>
+            {product ? (
+              <Link
+                href={{ pathname: "/Product", query: { id: product._id } }}
+                style={style}
+              >
+                <Product product={product} />
+              </Link>
+            ) : (
+              <Skelton />
+            )}
           </Grid>
         ))}
       </Grid>
