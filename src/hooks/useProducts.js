@@ -17,7 +17,7 @@ const useProduct = () => {
     fetchProducts();
   }, []);
 
-  return products;
+  return { products, setProducts };
 };
 
 export default useProduct;

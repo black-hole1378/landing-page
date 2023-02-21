@@ -14,7 +14,6 @@ const BoxContent = styled(Box)`
 
 const Product = ({ product }) => {
   const { image, name, rating, price, countInStock } = product;
-  console.log(image);
   return (
     <Card
       variant="outlined"
