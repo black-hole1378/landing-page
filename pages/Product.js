@@ -10,11 +10,12 @@ import {
   ContentContainer,
 } from "../src/components/products/index";
 import ErrorPage from "next/error";
+import fetch from "../src/data.json";
 const ProductPage = () => {
   const router = useRouter();
   const query = router.query;
-  const { data, error } = useProduct(query.id);
-
+  const { data, error } = useProduct(fetch.fetch.product + query.id);
+  console.log(error);
   if (error) return <ErrorPage statusCode={4004} />;
   else
     return (
