@@ -1,8 +1,8 @@
 import React from "react";
 import { useRouter } from "next/router";
-import useProduct from "../src/hooks/useProduct";
+import useProduct from "../src/hooks/useFetch";
 import style from "../styles/Product.module.css";
-import { Paper, Grid, Box } from "@mui/material";
+import { Paper, Grid } from "@mui/material";
 import {
   ProductLayout,
   ImageContainer,
@@ -12,7 +12,7 @@ import {
 const ProductPage = () => {
   const router = useRouter();
   const query = router.query;
-  const product = useProduct(query.id);
+  const data = useProduct(query.id);
   return (
     <div className={style.container}>
       <Paper
@@ -24,12 +24,12 @@ const ProductPage = () => {
       >
         <Grid container>
           <Grid item md={6} xs={12}>
-            <ImageContainer {...product} />
+            <ImageContainer {...data} />
           </Grid>
           <Grid item md={6} xs={12}>
             <ProductLayout>
-              <ContentContainer {...product} />
-              <PurchaseLayout {...product} />
+              <ContentContainer {...data} />
+              <PurchaseLayout {...data} />
             </ProductLayout>
           </Grid>
         </Grid>

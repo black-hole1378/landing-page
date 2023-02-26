@@ -18,7 +18,7 @@ const ContainerWrapper = styled(Box)`
   justify-content: space-between;
 `;
 
-export const ProductContainer = ({ countInStock, saveToCard, id, setOpen }) => {
+export const ProductContainer = ({ countInStock, saveToCard, id }) => {
   const { quantity, Increment, Decrement } = useQuantity(countInStock);
 
   return (
@@ -29,7 +29,6 @@ export const ProductContainer = ({ countInStock, saveToCard, id, setOpen }) => {
       pb={{ xs: 2 }}
       pr={{ xs: 4 }}
       columnSpacing={{ md: 2 }}
-      justifyContent="center"
     >
       <Grid item md={5} xs={12}>
         <ContainerWrapper>

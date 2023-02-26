@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import { selectAuthState } from "../src/State/Slice/authSlice";
 import { useSelector } from "react-redux";
 import ErrorPage from "next/error";

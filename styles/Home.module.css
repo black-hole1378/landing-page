@@ -17,6 +17,11 @@
   margin-top: auto;
 }
 
+.productLink {
+  text-decoration: none;
+  outline: none;
+}
+
 .link,
 .cartLogo {
   text-decoration: none;

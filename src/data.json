@@ -1,0 +1,6 @@
+{
+  "fetch": {
+    "products": "http://kzico.runflare.run/product/",
+    "product": "http://kzico.runflare.run/product/:"
+  }
+}
