@@ -9,33 +9,37 @@ import {
   PurchaseLayout,
   ContentContainer,
 } from "../src/components/products/index";
+import ErrorPage from "next/error";
 const ProductPage = () => {
   const router = useRouter();
   const query = router.query;
-  const data = useProduct(query.id);
-  return (
-    <div className={style.container}>
-      <Paper
-        sx={{
-          width: "100%",
-          height: "100%",
-          boxShadow: 1,
-        }}
-      >
-        <Grid container>
-          <Grid item md={6} xs={12}>
-            <ImageContainer {...data} />
+  const { data, error } = useProduct(query.id);
+
+  if (error) return <ErrorPage statusCode={4004} />;
+  else
+    return (
+      <div className={style.container}>
+        <Paper
+          sx={{
+            width: "100%",
+            height: "100%",
+            boxShadow: 1,
+          }}
+        >
+          <Grid container>
+            <Grid item md={6} xs={12}>
+              <ImageContainer {...data} />
+            </Grid>
+            <Grid item md={6} xs={12}>
+              <ProductLayout>
+                <ContentContainer {...data} />
+                <PurchaseLayout {...data} />
+              </ProductLayout>
+            </Grid>
           </Grid>
-          <Grid item md={6} xs={12}>
-            <ProductLayout>
-              <ContentContainer {...data} />
-              <PurchaseLayout {...data} />
-            </ProductLayout>
-          </Grid>
-        </Grid>
-      </Paper>
-    </div>
-  );
+        </Paper>
+      </div>
+    );
 };
 
 export default ProductPage;
