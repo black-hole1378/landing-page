@@ -1,11 +1,24 @@
- import React from "react";
-import { selectAuthState } from "../src/State/Slice/authSlice";
-import { useSelector } from "react-redux";
-import ErrorPage from "next/error";
-const Cart = () => {
-  const select = useSelector(selectAuthState);
-  if (!select) return <ErrorPage statusCode={404} />;
-  else return <div>Hello</div>;
+import { FormControl, Paper, TextField, Typography } from "@mui/material";
+import React from "react";
+const Login = () => {
+  return (
+    <Paper
+      sx={{
+        boxShadow: 1,
+        width: "300px",
+        height: "400px",
+        margin: "4rem auto",
+        p: 1,
+      }}
+    >
+      <Typography variant="body1" fontWeight={300} textAlign={"center"}>
+        Welcome back To Snap 😊
+      </Typography>
+      <FormControl fullWidth sx={{ mt: 2 }}>
+        <TextField fullWidth size="small" label="Username" />
+      </FormControl>
+    </Paper>
+  );
 };
 
-export default Cart;
+export default Login;
