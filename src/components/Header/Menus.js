@@ -57,7 +57,7 @@ const ToggleMenu = ({ open, handleClose, anchorEl }) => {
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>
-          <Link style={style} href={"/profile"}>
+          <Link style={style} href={"/setting/changeProfile"}>
             <BoxWrapper>
               <SettingsIcon />
               <Typography variant="body1" color={"text.primary"}>
