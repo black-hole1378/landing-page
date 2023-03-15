@@ -1,0 +1,21 @@
+.cart_container {
+  width: 700px;
+  height: 90vh;
+  margin: 4rem auto;
+}
+
+.image {
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .cart_container {
+    width: max-content;
+  }
+  .image {
+    width: 50px;
+    width: 50px;
+  }
+}
