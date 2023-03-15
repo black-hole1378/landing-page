@@ -5,6 +5,7 @@ import Style from "../../../styles/Home.module.css";
 import { Box } from "@mui/material";
 import ShoppingCart from "./ShoppingCart";
 import Login from "./Login";
+import Dropdown from "./DropdownMenu";
 
 const HeaderContainer = () => {
   return (
@@ -24,7 +25,7 @@ const HeaderContainer = () => {
           <Box flexGrow={1} />
           <Box display={"flex"} alignItems="center" gap={3}>
             <ShoppingCart />
-            <Login />
+            <Dropdown />
           </Box>
         </Toolbar>
       </Container>
