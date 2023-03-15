@@ -2,5 +2,24 @@
   "fetch": {
     "products": "http://kzico.runflare.run/product/",
     "product": "http://kzico.runflare.run/product/"
+  },
+  "carts": {
+    "products": [
+      {
+        "name": "Mouse",
+        "price": 100,
+        "image": "./images/image-product-1-thumbnail.jpg"
+      },
+      {
+        "name": "keyboard",
+        "price": 100,
+        "image": "./images/image-product-1.jpg"
+      },
+      {
+        "name": "Hello",
+        "price": 100,
+        "image": "./images/image-product-2-thumbnail.jpg"
+      }
+    ]
   }
 }
