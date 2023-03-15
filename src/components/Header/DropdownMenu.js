@@ -1,5 +1,5 @@
 import React from "react";
-import { IconButton, Box, Menu, MenuItem, Avatar } from "@mui/material";
+import { IconButton } from "@mui/material";
 import ToggleMenu from "./Menus";
 const Dropdown = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);

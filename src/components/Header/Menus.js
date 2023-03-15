@@ -38,7 +38,7 @@ const ToggleMenu = ({ open, handleClose, anchorEl }) => {
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <MenuItem onClick={handleClose}>
-          <Link style={style} href={"/profile"}>
+          <Link style={style} href={"/Profile"}>
             <BoxWrapper>
               <Avatar />
               <Typography variant="body1" color={"text.primary"}>
